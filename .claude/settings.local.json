@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv venv:*)",
+      "Bash(uv run:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}
