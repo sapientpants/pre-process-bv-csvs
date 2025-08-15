@@ -20,15 +20,26 @@ python process.py
 ### Dependencies
 The project uses:
 - **uv** for virtual environment management
-- **Poetry** for dependency management
+- **Poetry** for dependency management (installed in venv)
 - **Python 3.13+** runtime
 - **pandas** for CSV processing
 - **pandas-stubs** for type hints
 
-To install dependencies:
+To set up the environment:
 ```bash
+# Create virtual environment
 uv venv
-uv run poetry install
+
+# Activate the virtual environment
+source .venv/bin/activate  # On macOS/Linux
+# or
+.venv\Scripts\activate  # On Windows
+
+# Install Poetry in the virtual environment
+pip install poetry
+
+# Install project dependencies
+poetry install
 ```
 
 ## Architecture

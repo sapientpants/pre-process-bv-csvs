@@ -23,7 +23,6 @@ Berliner Volksbank exports transaction data in a German-formatted CSV that isn't
 
 - Python 3.13+
 - uv (for virtual environment management)
-- Poetry (for dependency management)
 - pandas
 
 ## Installation
@@ -37,11 +36,19 @@ cd pre-process-bv-csvs
 2. Create and activate the virtual environment with uv:
 ```bash
 uv venv
+source .venv/bin/activate  # On macOS/Linux
+# or
+.venv\Scripts\activate  # On Windows
 ```
 
-3. Install dependencies with Poetry:
+3. Install Poetry in the virtual environment:
 ```bash
-uv run poetry install
+pip install poetry
+```
+
+4. Install project dependencies with Poetry:
+```bash
+poetry install
 ```
 
 ## Usage
@@ -52,7 +59,12 @@ uv run poetry install
    - Files should follow the naming pattern: `{account-type}-Umsaetze_{IBAN}_{date}.csv`
    - Example: `checking-Umsaetze_XXXXXXXXXX_2025.04.30.csv`
 
-3. Run the processing script:
+3. Run the processing script (with the virtual environment activated):
+```bash
+python process.py
+```
+
+Or without activating the venv:
 ```bash
 uv run python process.py
 ```
